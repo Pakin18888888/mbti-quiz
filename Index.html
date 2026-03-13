@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MBTI Game Decision Quiz</title>
+
+<style>
+
+body{
+font-family: Arial;
+max-width:500px;
+margin:auto;
+padding:20px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin:8px 0;
+font-size:16px;
+}
+
+#result{
+font-size:24px;
+text-align:center;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>MBTI Game Quiz</h2>
+
+<p>1. คุณชอบเล่นเกมแบบไหน</p>
+
+<button onclick="answer('E')">เล่นกับเพื่อน</button>
+<button onclick="answer('I')">เล่นคนเดียว</button>
+
+
+<p>2. เวลาตัดสินใจในเกม</p>
+
+<button onclick="answer('T')">ใช้เหตุผล</button>
+<button onclick="answer('F')">ใช้ความรู้สึก</button>
+
+
+<p>3. วิธีเล่นเกมของคุณ</p>
+
+<button onclick="answer('J')">วางแผนก่อน</button>
+<button onclick="answer('P')">เล่นตามสถานการณ์</button>
+
+
+<p>4. คุณสนใจอะไรในเกม</p>
+
+<button onclick="answer('S')">ข้อมูลจริง</button>
+<button onclick="answer('N')">จินตนาการ</button>
+
+
+<button onclick="calculate()">ดูผลลัพธ์</button>
+
+<div id="result"></div>
+
+
+<script>
+
+let answers = []
+
+function answer(type){
+
+answers.push(type)
+
+}
+
+function calculate(){
+
+let mbti = answers.join("")
+
+document.getElementById("result").innerHTML =
+"MBTI ของคุณคือ " + mbti
+
+sendData(mbti)
+
+}
+
+function sendData(mbti){
+
+fetch("https://script.google.com/macros/s/AKfycbxnNy6nc7isnCSYJ1do3-jWRbjJpOUBduRL8D68ejAiAdZZmMcvG0i4duPQUM7dFezJLA/exec",{
+
+method:"POST",
+
+body:JSON.stringify({
+
+mbti:mbti,
+time:new Date().toLocaleString()
+
+})
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
