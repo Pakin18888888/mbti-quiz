@@ -43,7 +43,11 @@ margin-top:20px;
 
 <h2>MBTI Game Quiz</h2>
 
-<p>แบบทดสอบบุคลิกภาพจากการตัดสินใจในเกม</p>
+<p>คุณคิดว่าตัวเองเป็น MBTI อะไร?</p>
+
+<input id="mbtiInput" placeholder="เช่น INFP" style="padding:10px;font-size:16px">
+
+<br><br>
 
 <button onclick="startQuiz()">เริ่มทำแบบทดสอบ</button>
 
@@ -125,6 +129,7 @@ margin-top:20px;
 
 <script>
 
+let userMBTI = ""
 let answers = []
 let choices = []
 
@@ -140,6 +145,13 @@ document.getElementById(id).style.display="block"
 
 
 function startQuiz(){
+
+userMBTI = document.getElementById("mbtiInput").value
+
+if(userMBTI == ""){
+alert("กรุณากรอก MBTI ก่อน")
+return
+}
 
 showPage("q1")
 
@@ -211,6 +223,7 @@ method:"POST",
 
 body:JSON.stringify({
 
+inputMBTI:userMBTI,
 mbti:mbti,
 ending:ending,
 q1:choices[0],
