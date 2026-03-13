@@ -3,29 +3,32 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MBTI Game Decision Quiz</title>
 
 <style>
 
 body{
-font-family: Arial;
-max-width:500px;
-margin:auto;
-padding:20px;
+    font-family: Arial;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+
+.page{
+    display:none;
 }
 
 button{
-width:100%;
-padding:15px;
-margin:8px 0;
-font-size:16px;
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    font-size:16px;
 }
 
 #result{
-font-size:24px;
-text-align:center;
-margin-top:20px;
+    font-size:26px;
+    margin-top:20px;
 }
 
 </style>
@@ -34,55 +37,106 @@ margin-top:20px;
 
 <body>
 
+<!-- HOME -->
+<div id="home" class="page">
 <h2>MBTI Game Quiz</h2>
+<p>แบบทดสอบบุคลิกภาพจากการตัดสินใจในเกม</p>
+<button onclick="startQuiz()">เริ่มทำแบบทดสอบ</button>
+</div>
 
-<p>1. คุณชอบเล่นเกมแบบไหน</p>
+<!-- QUESTION 1 -->
+<div id="q1" class="page">
+<h3>คำถามที่ 1</h3>
+<p>คุณชอบเล่นเกมแบบไหน</p>
 
-<button onclick="answer('E')">เล่นกับเพื่อน</button>
-<button onclick="answer('I')">เล่นคนเดียว</button>
+<button onclick="next('E',2)">เล่นกับเพื่อน</button>
+<button onclick="next('I',2)">เล่นคนเดียว</button>
+</div>
 
+<!-- QUESTION 2 -->
+<div id="q2" class="page">
+<h3>คำถามที่ 2</h3>
+<p>เวลาตัดสินใจในเกม</p>
 
-<p>2. เวลาตัดสินใจในเกม</p>
+<button onclick="next('T',3)">ใช้เหตุผล</button>
+<button onclick="next('F',3)">ใช้ความรู้สึก</button>
+</div>
 
-<button onclick="answer('T')">ใช้เหตุผล</button>
-<button onclick="answer('F')">ใช้ความรู้สึก</button>
+<!-- QUESTION 3 -->
+<div id="q3" class="page">
+<h3>คำถามที่ 3</h3>
+<p>วิธีเล่นเกมของคุณ</p>
 
+<button onclick="next('J',4)">วางแผนก่อน</button>
+<button onclick="next('P',4)">เล่นตามสถานการณ์</button>
+</div>
 
-<p>3. วิธีเล่นเกมของคุณ</p>
+<!-- QUESTION 4 -->
+<div id="q4" class="page">
+<h3>คำถามที่ 4</h3>
+<p>คุณสนใจอะไรในเกม</p>
 
-<button onclick="answer('J')">วางแผนก่อน</button>
-<button onclick="answer('P')">เล่นตามสถานการณ์</button>
+<button onclick="showResult('S')">ข้อมูลจริง</button>
+<button onclick="showResult('N')">จินตนาการ</button>
+</div>
 
+<!-- RESULT -->
+<div id="resultPage" class="page">
 
-<p>4. คุณสนใจอะไรในเกม</p>
-
-<button onclick="answer('S')">ข้อมูลจริง</button>
-<button onclick="answer('N')">จินตนาการ</button>
-
-
-<button onclick="calculate()">ดูผลลัพธ์</button>
+<h2>ผลลัพธ์ของคุณ</h2>
 
 <div id="result"></div>
 
+<button onclick="restart()">ทำแบบทดสอบอีกครั้ง</button>
+
+</div>
 
 <script>
 
 let answers = []
 
-function answer(type){
+function showPage(id){
 
-answers.push(type)
+document.querySelectorAll(".page").forEach(p=>{
+    p.style.display="none"
+})
+
+document.getElementById(id).style.display="block"
 
 }
 
-function calculate(){
+function startQuiz(){
+showPage("q1")
+}
+
+function next(type,nextPage){
+
+answers.push(type)
+
+showPage("q"+nextPage)
+
+}
+
+function showResult(type){
+
+answers.push(type)
 
 let mbti = answers.join("")
 
 document.getElementById("result").innerHTML =
-"MBTI ของคุณคือ " + mbti
+"MBTI ของคุณคือ <b>"+mbti+"</b>"
+
+showPage("resultPage")
 
 sendData(mbti)
+
+}
+
+function restart(){
+
+answers=[]
+
+showPage("home")
 
 }
 
@@ -102,6 +156,8 @@ time:new Date().toLocaleString()
 })
 
 }
+
+showPage("home")
 
 </script>
 
