@@ -1,4 +1,23 @@
-*{
-    width: 100%;
-    background-color: black;
+body{
+font-family:Arial;
+max-width:500px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+
+.page{
+display:none;
+}
+
+button{
+width:100%;
+padding:15px;
+margin:10px 0;
+font-size:16px;
+}
+
+#result{
+font-size:26px;
+margin-top:20px;
 }
