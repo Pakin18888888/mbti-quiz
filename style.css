@@ -21,3 +21,8 @@ font-size:16px;
 font-size:26px;
 margin-top:20px;
 }
+
+#userMBTI{
+    font-weight: bold;
+    text-transform:uppercase;
+}
