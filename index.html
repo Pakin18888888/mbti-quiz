@@ -1,262 +1,262 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>MBTI Game Decision Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MBTI Game Decision Quiz</title>
 
 </head>
 
 <body>
 
-<!-- HOME -->
-<div id="home" class="page">
+    <!-- HOME -->
+    <div id="home" class="page">
 
-<h2>MBTI Game Quiz</h2>
+        <h2>MBTI Game Quiz</h2>
 
-<p>กรอก MBTI ของคุณก่อนเริ่ม</p>
+        <p>กรอก MBTI ของคุณก่อนเริ่ม</p>
 
-<input id="userMBTI" placeholder="เช่น INTJ" maxlength="4" style="padding:10px;width:100%;margin-bottom:10px">
+        <input id="userMBTI" placeholder="เช่น INTJ" maxlength="4" style="padding:10px;width:100%;margin-bottom:10px">
 
-<button onclick="checkMBTI()">เริ่มทำแบบทดสอบ</button>
+        <button onclick="checkMBTI()">เริ่มทำแบบทดสอบ</button>
 
-<div id="error" style="color:red;margin-top:10px"></div>
+        <div id="error" style="color:red;margin-top:10px"></div>
 
-</div>
+    </div>
 
 
-<!-- QUESTION 1 -->
+    <!-- QUESTION 1 -->
 
-<div id="q1" class="page">
+    <div id="q1" class="page">
 
-<h3>คำถามที่ 1</h3>
+        <h3>คำถามที่ 1</h3>
 
-<p>คุณชอบเล่นเกมแบบไหน</p>
+        <p>คุณชอบเล่นเกมแบบไหน</p>
 
-<button onclick="next('E',2)">เล่นกับเพื่อน</button>
+        <button onclick="next('E',2)">เล่นกับเพื่อน</button>
 
-<button onclick="next('I',2)">เล่นคนเดียว</button>
+        <button onclick="next('I',2)">เล่นคนเดียว</button>
 
-</div>
+    </div>
 
 
-<!-- QUESTION 2 -->
+    <!-- QUESTION 2 -->
 
-<div id="q2" class="page">
+    <div id="q2" class="page">
 
-<h3>คำถามที่ 2</h3>
+        <h3>คำถามที่ 2</h3>
 
-<p>เวลาตัดสินใจในเกม</p>
+        <p>เวลาตัดสินใจในเกม</p>
 
-<button onclick="next('T',3)">ใช้เหตุผล</button>
+        <button onclick="next('T',3)">ใช้เหตุผล</button>
 
-<button onclick="next('F',3)">ใช้ความรู้สึก</button>
+        <button onclick="next('F',3)">ใช้ความรู้สึก</button>
 
-</div>
+    </div>
 
 
-<!-- QUESTION 3 -->
+    <!-- QUESTION 3 -->
 
-<div id="q3" class="page">
+    <div id="q3" class="page">
 
-<h3>คำถามที่ 3</h3>
+        <h3>คำถามที่ 3</h3>
 
-<p>วิธีเล่นเกมของคุณ</p>
+        <p>วิธีเล่นเกมของคุณ</p>
 
-<button onclick="next('J',4)">วางแผนก่อน</button>
+        <button onclick="next('J',4)">วางแผนก่อน</button>
 
-<button onclick="next('P',4)">เล่นตามสถานการณ์</button>
+        <button onclick="next('P',4)">เล่นตามสถานการณ์</button>
 
-</div>
+    </div>
 
 
-<!-- QUESTION 4 -->
+    <!-- QUESTION 4 -->
 
-<div id="q4" class="page">
+    <div id="q4" class="page">
 
-<h3>คำถามที่ 4</h3>
+        <h3>คำถามที่ 4</h3>
 
-<p>คุณสนใจอะไรในเกม</p>
+        <p>คุณสนใจอะไรในเกม</p>
 
-<button onclick="showResult('S')">ข้อมูลจริง</button>
+        <button onclick="showResult('S')">ข้อมูลจริง</button>
 
-<button onclick="showResult('N')">จินตนาการ</button>
+        <button onclick="showResult('N')">จินตนาการ</button>
 
-</div>
+    </div>
 
 
-<!-- RESULT -->
+    <!-- RESULT -->
 
-<div id="resultPage" class="page">
+    <div id="resultPage" class="page">
 
-<h2>ผลลัพธ์ของคุณ</h2>
+        <h2>ผลลัพธ์ของคุณ</h2>
 
-<div id="result"></div>
+        <div id="result"></div>
 
-<button onclick="restart()">ทำแบบทดสอบอีกครั้ง</button>
+        <button onclick="restart()">ทำแบบทดสอบอีกครั้ง</button>
 
-</div>
+    </div>
 
 
-<script>
+    <script>
 
-let validMBTI = [
-"INTJ","INTP","ENTJ","ENTP",
-"INFJ","INFP","ENFJ","ENFP",
-"ISTJ","ISFJ","ESTJ","ESFJ",
-"ISTP","ISFP","ESTP","ESFP"
-]
-let userMBTI = ""
-let answers = []
-let choices = []
-function checkMBTI(){
+        let validMBTI = [
+            "INTJ", "INTP", "ENTJ", "ENTP",
+            "INFJ", "INFP", "ENFJ", "ENFP",
+            "ISTJ", "ISFJ", "ESTJ", "ESFJ",
+            "ISTP", "ISFP", "ESTP", "ESFP"
+        ]
+        let userMBTI = ""
+        let answers = []
+        let choices = []
+        function checkMBTI() {
 
-let input = document.getElementById("userMBTI").value.toUpperCase()
+            let input = document.getElementById("userMBTI").value.toUpperCase()
 
-if(!validMBTI.includes(input)){
+            if (!validMBTI.includes(input)) {
 
-document.getElementById("error").innerHTML =
-"Error: กรุณากรอก MBTI ที่ถูกต้อง เช่น INTJ, ENFP"
+                document.getElementById("error").innerHTML =
+                    "Error: กรุณากรอก MBTI ที่ถูกต้อง เช่น INTJ, ENFP"
 
-return
-}
+                return
+            }
 
-userMBTI = input
+            userMBTI = input
 
-document.getElementById("error").innerHTML=""
+            document.getElementById("error").innerHTML = ""
 
-startQuiz()
+            startQuiz()
 
-}
+        }
 
-function showPage(id){
+        function showPage(id) {
 
-document.querySelectorAll(".page").forEach(p=>{
-p.style.display="none"
-})
+            document.querySelectorAll(".page").forEach(p => {
+                p.style.display = "none"
+            })
 
-document.getElementById(id).style.display="block"
+            document.getElementById(id).style.display = "block"
 
-}
+        }
 
-function startQuiz(){
+        function startQuiz() {
 
-userMBTI = document.getElementById("userMBTI").value.toUpperCase();
+            if (userMBTI == "") {
+                alert("กรุณากรอก MBTI ก่อน")
+                return
+            }
 
-if(userMBTI == ""){
-alert("กรุณากรอก MBTI ก่อน")
-return
-}
+            showPage("q1")
 
-showPage("q1")
+        }
 
-}
+        function next(type, nextPage) {
 
-function next(type,nextPage){
+            answers.push(type)
 
-answers.push(type)
+            choices.push(type)
 
-choices.push(type)
+            showPage("q" + nextPage)
 
-showPage("q"+nextPage)
+        }
 
-}
 
+        function getEnding(mbti) {
 
-function getEnding(mbti){
+            // นักวิเคราะห์ (Analysts)
+            if (mbti == "INTJ") return "Architect (นักวิเคราะห์)"
+            if (mbti == "INTP") return "Logician (นักวิเคราะห์)"
+            if (mbti == "ENTJ") return "Commander (นักวิเคราะห์)"
+            if (mbti == "ENTP") return "Debater (นักวิเคราะห์)"
 
-// นักวิเคราะห์ (Analysts)
-if(mbti=="INTJ") return "Architect (นักวิเคราะห์)"
-if(mbti=="INTP") return "Logician (นักวิเคราะห์)"
-if(mbti=="ENTJ") return "Commander (นักวิเคราะห์)"
-if(mbti=="ENTP") return "Debater (นักวิเคราะห์)"
+            // นักการทูต (Diplomats)
+            if (mbti == "INFJ") return "Advocate (นักการทูต)"
+            if (mbti == "INFP") return "Mediator (นักการทูต)"
+            if (mbti == "ENFJ") return "Protagonist (นักการทูต)"
+            if (mbti == "ENFP") return "Campaigner (นักการทูต)"
 
-// นักการทูต (Diplomats)
-if(mbti=="INFJ") return "Advocate (นักการทูต)"
-if(mbti=="INFP") return "Mediator (นักการทูต)"
-if(mbti=="ENFJ") return "Protagonist (นักการทูต)"
-if(mbti=="ENFP") return "Campaigner (นักการทูต)"
+            // ผู้พิทักษ์ (Sentinels)
+            if (mbti == "ISTJ") return "Logistician (ผู้พิทักษ์)"
+            if (mbti == "ISFJ") return "Defender (ผู้พิทักษ์)"
+            if (mbti == "ESTJ") return "Executive (ผู้พิทักษ์)"
+            if (mbti == "ESFJ") return "Consul (ผู้พิทักษ์)"
 
-// ผู้พิทักษ์ (Sentinels)
-if(mbti=="ISTJ") return "Logistician (ผู้พิทักษ์)"
-if(mbti=="ISFJ") return "Defender (ผู้พิทักษ์)"
-if(mbti=="ESTJ") return "Executive (ผู้พิทักษ์)"
-if(mbti=="ESFJ") return "Consul (ผู้พิทักษ์)"
+            // นักสำรวจ (Explorers)
+            if (mbti == "ISTP") return "Virtuoso (นักสำรวจ)"
+            if (mbti == "ISFP") return "Adventurer (นักสำรวจ)"
+            if (mbti == "ESTP") return "Entrepreneur (นักสำรวจ)"
+            if (mbti == "ESFP") return "Entertainer (นักสำรวจ)"
 
-// นักสำรวจ (Explorers)
-if(mbti=="ISTP") return "Virtuoso (นักสำรวจ)"
-if(mbti=="ISFP") return "Adventurer (นักสำรวจ)"
-if(mbti=="ESTP") return "Entrepreneur (นักสำรวจ)"
-if(mbti=="ESFP") return "Entertainer (นักสำรวจ)"
+            return "Unknown Type"
 
-return "Unknown Type"
+        }
 
-}
 
+        function showResult(type) {
 
-function showResult(type){
+            answers.push(type)
 
-answers.push(type)
+            // answers = [E, T, J, S]
 
-// answers = [E, T, J, S]
+            let mbti =
+                answers[0] +   // E/I
+                answers[3] +   // S/N
+                answers[1] +   // T/F
+                answers[2]     // J/P
 
-let mbti =
-answers[0] +   // E/I
-answers[3] +   // S/N
-answers[1] +   // T/F
-answers[2]     // J/P
+            let ending = getEnding(mbti)
 
-let ending = getEnding(mbti)
+            document.getElementById("result").innerHTML =
+                "MBTI ที่ได้จากเกมคือ <b>" + mbti + "</b>"
 
-document.getElementById("result").innerHTML =
-"MBTI ที่ได้จากเกมคือ <b>"+mbti+"</b>"
+            showPage("resultPage")
 
-showPage("resultPage")
+            sendData(mbti, ending, answers)
 
-sendData(mbti,ending,answers)
+        }
 
-}
 
+        function restart() {
 
-function restart(){
+            answers = []
 
-answers=[]
+            choices = []
 
-choices=[]
+            showPage("home")
 
-showPage("home")
+        }
 
-}
 
+        function sendData(mbti, ending, choices) {
 
-function sendData(mbti,ending,choices){
+            fetch("https://script.google.com/macros/s/AKfycbx5jiFN-4QqZuGpEidm3N881vO_J0Mv7goyXccddrtVTkLYzgf0YcILP3-a61Ao_wBXkQ/exec", {
 
-fetch("https://script.google.com/macros/s/AKfycbx5jiFN-4QqZuGpEidm3N881vO_J0Mv7goyXccddrtVTkLYzgf0YcILP3-a61Ao_wBXkQ/exec",{
+                method: "POST",
 
-method:"POST",
+                body: JSON.stringify({
 
-body:JSON.stringify({
+                    inputMBTI: userMBTI,
+                    mbti: mbti,
+                    ending: ending,
+                    q1: choices[0],
+                    q2: choices[1],
+                    q3: choices[2],
+                    q4: choices[3],
+                    time: new Date().toLocaleString()
 
-inputMBTI:userMBTI,
-mbti:mbti,
-ending:ending,
-q1:choices[0],
-q2:choices[1],
-q3:choices[2],
-q4:choices[3],
-time:new Date().toLocaleString()
+                })
 
-})
+            })
 
-})
+        }
 
-}
 
+        showPage("home")
 
-showPage("home")
-
-</script>
+    </script>
 
 </body>
+
 </html>
