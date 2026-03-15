@@ -17,7 +17,7 @@
 
 <p>กรอก MBTI ของคุณก่อนเริ่ม</p>
 
-<input id="userMBTI" placeholder="เช่น INTJ" style="padding:10px;width:100%;margin-bottom:10px">
+<input id="userMBTI" placeholder="เช่น INTJ" maxlength="4" style="padding:10px;width:100%;margin-bottom:10px">
 
 <button onclick="checkMBTI()">เริ่มทำแบบทดสอบ</button>
 
@@ -140,10 +140,9 @@ document.getElementById(id).style.display="block"
 
 }
 
-
 function startQuiz(){
 
-userMBTI = document.getElementById("userMBTI").value
+userMBTI = document.getElementById("userMBTI").value.toUpperCase()
 
 if(userMBTI == ""){
 alert("กรุณากรอก MBTI ก่อน")
@@ -153,7 +152,6 @@ return
 showPage("q1")
 
 }
-
 
 function next(type,nextPage){
 
