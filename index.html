@@ -31,13 +31,15 @@
 
     <div id="q1" class="page">
 
-        <h3>คำถามที่ 1</h3>
+        <p>คุณตื่นขึ้นมาในป่าลึกลับ</p>
 
-        <p>คุณชอบเล่นเกมแบบไหน</p>
+        <button onclick="next('Exploration',2)">ลุกขึ้นและออกสำรวจพื้นที่รอบ ๆ</button>
 
-        <button onclick="next('E',2)">เล่นกับเพื่อน</button>
+        <button onclick="next('Action',3)">เดินตามเสียงต่อสู้ที่ได้ยินไกล ๆ</button>
 
-        <button onclick="next('I',2)">เล่นคนเดียว</button>
+        <button onclick="next('Puzzle',4)">สังเกตสัญลักษณ์แปลก ๆ บนต้นไม้</button>
+
+        <button onclick="next('Story',5)">เดินไปตามทางที่มีบ้านเล็ก ๆ อยู่</button>
 
     </div>
 
@@ -46,13 +48,15 @@
 
     <div id="q2" class="page">
 
-        <h3>คำถามที่ 2</h3>
+        <p>คุณพบหมู่บ้านร้าง</p>
 
-        <p>เวลาตัดสินใจในเกม</p>
+        <button onclick="next('Exploration',6)">สำรวจบ้านแต่ละหลัง</button>
 
-        <button onclick="next('T',3)">ใช้เหตุผล</button>
+        <button onclick="next('Action',7)">มองหาศัตรูหรือมอนสเตอร์ในหมู่บ้าน</button>
 
-        <button onclick="next('F',3)">ใช้ความรู้สึก</button>
+        <button onclick="next('Puzzle',8)">ตรวจดูสัญลักษณ์ประหลาดในหมู่บ้าน</button>
+
+        <button onclick="next('Story',9)">อ่านบันทึกที่ทิ้งไว้ในบ้าน</button>
 
     </div>
 
@@ -61,28 +65,143 @@
 
     <div id="q3" class="page">
 
-        <h3>คำถามที่ 3</h3>
+        <p>คุณพบอัศวินกำลังต่อสู้กับมอนสเตอร์</p>
 
-        <p>วิธีเล่นเกมของคุณ</p>
+        <button onclick="next('Action',7)">เข้าไปช่วยสู้</button>
 
-        <button onclick="next('J',4)">วางแผนก่อน</button>
+        <button onclick="next('Puzzle',10)">ดูการต่อสู้เพื่อเรียนรู้จังหวะ</button>
 
-        <button onclick="next('P',4)">เล่นตามสถานการณ์</button>
+        <button onclick="next('Exploration',6)">สำรวจพื้นที่รอบ ๆ ก่อน</button>
+
+        <button onclick="next('Story',9)">คุยกับอัศวินหลังการต่อสู้</button>
 
     </div>
-
 
     <!-- QUESTION 4 -->
 
     <div id="q4" class="page">
 
-        <h3>คำถามที่ 4</h3>
+        <p>คุณเจอประตูหินโบราณ</p>
 
-        <p>คุณสนใจอะไรในเกม</p>
+        <button onclick="next('Puzzle',8)">ลองแก้กลไกเปิดประตู</button>
 
-        <button onclick="showResult('S')">ข้อมูลจริง</button>
+        <button onclick="next('Exploration',6)">มองหาทางลัดรอบ ๆ</button>
 
-        <button onclick="showResult('N')">จินตนาการ</button>
+        <button onclick="next('Action',7)">พังประตูเข้าไป</button>
+
+        <button onclick="next('Story',9)">อ่านจารึกบนประตู</button>
+
+    </div>
+
+    <!-- QUESTION 5 -->
+
+    <div id="q5" class="page">
+
+        <p>คุณเจอหญิงลึกลับในบ้าน</p>
+
+        <button onclick="next('Story',9)">คุยกับเธอเกี่ยวกับโลกนี้</button>
+
+        <button onclick="next('Exploration',6)">ออกไปสำรวจรอบบ้าน</button>
+
+        <button onclick="next('Story',11)">ถามเธอเกี่ยวกับทางออกจากโลกนี้</button>
+
+        <button onclick="next('Action',7)">ระวังตัวและเตรียมสู้</button>
+
+    </div>
+
+    <!-- QUESTION 6 -->
+
+    <div id="q6" class="page">
+
+        <p>คุณพบป่าลึกที่เต็มไปด้วยทางแยก</p>
+
+        <button onclick="next('Exploration',10)">เดินสำรวจต่อ</button>
+
+        <button onclick="next('Exploration',10)">ปีนหน้าผาเพื่อดูวิว</button>
+
+        <button onclick="next('Puzzle',8)">แก้แผนที่ลึกลับที่เจอ</button>
+
+        <button onclick="next('Action',7)">ตามรอยมอนสเตอร์</button>
+
+    </div>
+
+    <!-- QUESTION 7 -->
+
+    <div id="q7" class="page">
+
+        <p>คุณเจอมอนสเตอร์ขนาดใหญ่</p>
+
+        <button onclick="showResult('Action')">เข้าโจมตีทันที</button>
+
+        <button onclick="showResult('Action')">หลบและหาจังหวะโจมตี</button>
+
+        <button onclick="next('Puzzle',10)">ใช้สิ่งแวดล้อมกำจัดมัน</button>
+
+        <button onclick="next('Exploration',6)">หนีไปหาทางอื่น</button>
+
+    </div>
+
+    <!-- QUESTION 8 -->
+
+    <div id="q8" class="page">
+
+        <p>คุณพบห้องปริศนา</p>
+
+        <button onclick="next('Puzzle',10)">หมุนสัญลักษณ์ให้ตรงกัน</button>
+
+        <button onclick="next('Exploration',10)">สำรวจหาคำใบ้ในห้อง</button>
+
+        <button onclick="next('Action',7)">พยายามเปิดประตูด้วยกำลัง</button>
+
+        <button onclick="next('Story',7)">อ่านข้อความโบราณ</button>
+
+    </div>
+
+    <!-- QUESTION 9 -->
+
+    <div id="q9" class="page">
+
+        <p>คุณได้เรียนรู้ความจริงของโลกนี้</p>
+
+        <button onclick="next('Story',11)">คุยกับ NPC ต่อ</button>
+
+        <button onclick="next('Exploration',10)">ออกไปพิสูจน์เรื่องนี้ด้วยตัวเอง</button>
+
+        <button onclick="showResult('Action')">เตรียมตัวต่อสู้กับศัตรูหลัก</button>
+
+        <button onclick="next('Puzzle',8)">ค้นหาความลับเพิ่มเติม</button>
+
+    </div>
+
+    <!-- QUESTION 10 -->
+
+    <div id="q10" class="page">
+
+        <p>คุณพบประตูสู่ดันเจี้ยนสุดท้าย</p>
+
+        <button onclick="showResult('Action')">เข้าไปทันที</button>
+
+        <button onclick="next('Exploration',11)">สำรวจรอบดันเจี้ยนก่อน</button>
+
+        <button onclick="showResult('Puzzle')">แก้กลไกเปิดประตู</button>
+
+        <button onclick="next('Story',11)">อ่านประวัติของดันเจี้ยน</button>
+
+    </div>
+
+    <!-- QUESTION 11 -->
+
+    <div id="q11" class="page">
+
+        <p>คุณค้นพบความลับของโลกนี้</p>
+
+        <button onclick="showResult('Story')">คุยกับผู้พิทักษ์โลก</button>
+
+        <button onclick="showResult('Exploration')">สำรวจโลกนี้เพิ่มเติม</button>
+
+        <button onclick="showResult('Action')">เตรียมตัวต่อสู้เพื่อออกจากโลกนี้</button>
+
+        <button onclick="showResult('Puzzle')">แก้ปริศนาประตูมิติ</button>
 
     </div>
 

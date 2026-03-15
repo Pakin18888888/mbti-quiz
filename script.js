@@ -5,8 +5,13 @@ let validMBTI = [
     "ISTP", "ISFP", "ESTP", "ESFP"
 ]
 let userMBTI = ""
-let answers = []
-let choices = []
+let scores = {
+    Exploration: 0,
+    Action: 0,
+    Puzzle: 0,
+    Story: 0
+}
+let answers = {}
 function checkMBTI() {
 
     let input = document.getElementById("userMBTI").value.toUpperCase()
@@ -50,103 +55,114 @@ function startQuiz() {
 
 function next(type, nextPage) {
 
-    answers.push(type)
+    scores[type]++
 
-    choices.push(type)
+    let currentPage = document.querySelector(".page[style*='block']").id
+
+    answers[currentPage] = type
 
     showPage("q" + nextPage)
 
 }
 
 
-function getEnding(mbti) {
+function getResult() {
 
-    // นักวิเคราะห์ (Analysts)
-    if (mbti == "INTJ") return "Architect (นักวิเคราะห์)"
-    if (mbti == "INTP") return "Logician (นักวิเคราะห์)"
-    if (mbti == "ENTJ") return "Commander (นักวิเคราะห์)"
-    if (mbti == "ENTP") return "Debater (นักวิเคราะห์)"
+    let max = 0
+    let result = ""
 
-    // นักการทูต (Diplomats)
-    if (mbti == "INFJ") return "Advocate (นักการทูต)"
-    if (mbti == "INFP") return "Mediator (นักการทูต)"
-    if (mbti == "ENFJ") return "Protagonist (นักการทูต)"
-    if (mbti == "ENFP") return "Campaigner (นักการทูต)"
+    for (let type in scores) {
 
-    // ผู้พิทักษ์ (Sentinels)
-    if (mbti == "ISTJ") return "Logistician (ผู้พิทักษ์)"
-    if (mbti == "ISFJ") return "Defender (ผู้พิทักษ์)"
-    if (mbti == "ESTJ") return "Executive (ผู้พิทักษ์)"
-    if (mbti == "ESFJ") return "Consul (ผู้พิทักษ์)"
+        if (scores[type] > max) {
 
-    // นักสำรวจ (Explorers)
-    if (mbti == "ISTP") return "Virtuoso (นักสำรวจ)"
-    if (mbti == "ISFP") return "Adventurer (นักสำรวจ)"
-    if (mbti == "ESTP") return "Entrepreneur (นักสำรวจ)"
-    if (mbti == "ESFP") return "Entertainer (นักสำรวจ)"
+            max = scores[type]
+            result = type
 
-    return "Unknown Type"
+        }
+
+    }
+
+    if (result == "Action") return "Action Player ⚔️"
+    if (result == "Exploration") return "Explorer 🌍"
+    if (result == "Puzzle") return "Puzzle Solver 🧠"
+    if (result == "Story") return "Story Seeker 📖"
 
 }
 
 
 function showResult(type) {
 
-    answers.push(type)
+    scores[type]++
 
-    // answers = [E, T, J, S]
+    let currentPage = document.querySelector(".page[style*='block']").id
 
-    let mbti =
-        answers[0] +   // E/I
-        answers[3] +   // S/N
-        answers[1] +   // T/F
-        answers[2]     // J/P
+    answers[currentPage] = type
 
-    let ending = getEnding(mbti)
+    let resultType = getResult()
 
     document.getElementById("result").innerHTML =
-        "MBTI ที่ได้จากเกมคือ <b>" + mbti + "</b>"
+        "สไตล์เกมของคุณคือ <b>" + resultType + "</b>"
 
     showPage("resultPage")
 
-    sendData(mbti, ending, answers)
+    sendData(resultType)
 
 }
 
-
 function restart() {
 
-    answers = []
-
-    choices = []
+    scores = {
+        Exploration: 0,
+        Action: 0,
+        Puzzle: 0,
+        Story: 0
+    }
 
     showPage("home")
 
 }
 
+function sendData(resultType) {
 
-function sendData(mbti, ending, choices) {
+fetch("https://script.google.com/macros/s/AKfycbx2AR54FFnL-BkqaELZLuVSHIjau7P5iAm1ruDSPDP9xrl5P4nwhGtUllTRXr8s07Rkkw/exec", {
 
-    fetch("https://script.google.com/macros/s/AKfycbx5jiFN-4QqZuGpEidm3N881vO_J0Mv7goyXccddrtVTkLYzgf0YcILP3-a61Ao_wBXkQ/exec", {
+method: "POST",
+mode: "no-cors",
 
-        method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
 
-        body: JSON.stringify({
+body: JSON.stringify({
+inputMBTI: userMBTI,
+result: resultType,
 
-            inputMBTI: userMBTI,
-            mbti: mbti,
-            ending: ending,
-            q1: choices[0],
-            q2: choices[1],
-            q3: choices[2],
-            q4: choices[3],
-            time: new Date().toLocaleString()
+q1: answers.q1 || "-",
+q2: answers.q2 || "-",
+q3: answers.q3 || "-",
+q4: answers.q4 || "-",
+q5: answers.q5 || "-",
+q6: answers.q6 || "-",
+q7: answers.q7 || "-",
+q8: answers.q8 || "-",
+q9: answers.q9 || "-",
+q10: answers.q10 || "-",
+q11: answers.q11 || "-",
 
-        })
+exploration: scores.Exploration,
+action: scores.Action,
+puzzle: scores.Puzzle,
+story: scores.Story,
 
-    })
+time: new Date().toLocaleString()
+
+})
+
+})
+.then(res => res.text())
+.then(data => console.log("Server response:", data))
+.catch(err => console.error("Error:", err))
 
 }
-
 
 showPage("home")
