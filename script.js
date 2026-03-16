@@ -14,25 +14,28 @@ let scores = {
 let answers = {}
 
 let music = document.getElementById("bgm")
+
 music.volume = 0.05
+
+window.addEventListener("load", () => {
+    music.play().catch(()=>{})
+})
 
 function toggleSound() {
 
     if (music.muted) {
+
         music.muted = false
         document.getElementById("soundBtn").innerHTML = "🔊"
+
     } else {
+
         music.muted = true
         document.getElementById("soundBtn").innerHTML = "🔇"
+
     }
 
 }
-
-function startMusic() {
-    music.muted = false
-}
-
-document.body.addEventListener("click", startMusic, { once: true })
 
 function checkMBTI() {
 
