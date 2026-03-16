@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>MBTI Game Decision Quiz</title>
-
+    
 </head>
 
 <body>
+    <audio id="bgm" loop style="display:none">
+    <source src="/universfield-soothing-serenade-185901.mp3" type="audio/mpeg">
+</audio>
+
+<button id="soundBtn" onclick="toggleSound()" 
+style="width: 50px; position:fixed;top:500px;right: 100px; padding:10px;font-size:20px;">
+🔊
+</button>
 
     <!-- HOME -->
     <div id="home" class="page">
@@ -18,9 +26,10 @@
 
         <p>กรอก MBTI ของคุณก่อนเริ่ม</p>
 
-        <input id="userMBTI" placeholder="เช่น INTJ" maxlength="4" style="padding:10px;width:100%;margin-bottom:10px">
+        <input id="userMBTI" placeholder="เช่น INTJ" maxlength="4" style="padding:10px;width:70%;margin-bottom:10px">
 
-        <button onclick="checkMBTI()">เริ่มทำแบบทดสอบ</button>
+        <center><button onclick="checkMBTI()" style="padding:10px;width:50%;margin-bottom:10px">เริ่มทำแบบทดสอบ</button>
+        </center>
 
         <div id="error" style="color:red;margin-top:10px"></div>
 

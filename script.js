@@ -12,6 +12,28 @@ let scores = {
     Story: 0
 }
 let answers = {}
+
+let music = document.getElementById("bgm")
+music.volume = 0.05
+
+function toggleSound(){
+
+    if(music.muted){
+        music.muted = false
+        document.getElementById("soundBtn").innerHTML = "🔊"
+    }else{
+        music.muted = true
+        document.getElementById("soundBtn").innerHTML = "🔇"
+    }
+
+}
+
+function startMusic(){
+    music.muted = false
+}
+
+document.body.addEventListener("click", startMusic, { once: true })
+
 function checkMBTI() {
 
     let input = document.getElementById("userMBTI").value.toUpperCase()
@@ -25,11 +47,13 @@ function checkMBTI() {
     }
 
     userMBTI = input
-
     document.getElementById("error").innerHTML = ""
 
-    startQuiz()
+    let music = document.getElementById("bgm")
+    music.volume = 0.2
+    music.play()
 
+    startQuiz()
 }
 
 function showPage(id) {
