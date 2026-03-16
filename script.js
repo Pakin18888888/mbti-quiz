@@ -17,9 +17,12 @@ let music = document.getElementById("bgm")
 
 music.volume = 0.05
 
-window.addEventListener("load", () => {
-    music.play().catch(()=>{})
-})
+document.addEventListener("click", function () {
+
+    music.muted = false
+    music.play()
+
+}, { once: true })
 
 function toggleSound() {
 
