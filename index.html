@@ -36,19 +36,64 @@
     </div>
 
 
+    <!-- PAGE 1 -->
+
+    <div id="q0" class="page">
+
+        <p>คุณลืมตาขึ้นช้า ๆ
+            <br>แสงแดดลอดผ่านใบไม้ลงมาเป็นลำ กระทบใบหน้าของคุณ
+            <br>พื้นดินเย็นและชื้น
+            <br>กลิ่นดินผสมกลิ่นใบไม้แห้งลอยอยู่ในอากาศ
+            <br>คุณพยายามนึก…
+            <br>แต่ไม่มีอะไรเลย
+            <br>ไม่มีชื่อ ไม่มีความทรงจำ ไม่มีคำอธิบายว่าคุณมาอยู่ที่นี่ได้ยังไง
+            <br>ทันใดนั้น—
+        </p>
+
+        <button onclick="next('',1)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
+
+    </div>
+
     <!-- QUESTION 1 -->
 
     <div id="q1" class="page">
 
-        <p>คุณตื่นขึ้นมาในป่าลึกลับ</p>
+        <p>คุณเริ่มสังเกตสิ่งรอบตัว
+            <br>เสียงการต่อสู้…แว่วมาไกล ๆ
+            <br>สัญลักษณ์บางอย่าง…ถูกสลักไว้บนต้นไม้
+            <br>ทางเดินเล็ก ๆ…นำไปสู่บ้านไม้หลังหนึ่ง
+            <br>และพื้นที่รอบตัว…ยังไม่ถูกสำรวจ
+            <br>หัวใจคุณเต้นแรงขึ้นเล็กน้อย
+            <br>คุณจะเลือกอะไร?
+        </p>
 
-        <button onclick="next('Exploration',2)">ลุกขึ้นและออกสำรวจพื้นที่รอบ ๆ</button>
+        <button onclick="next('Exploration',2.5)">คุณค่อย ๆ ลุกขึ้น ยืนอย่างระวัง
+            และเริ่มสำรวจพื้นที่รอบตัวทีละนิด</button>
 
-        <button onclick="next('Action',3)">เดินตามเสียงต่อสู้ที่ได้ยินไกล ๆ</button>
+        <button onclick="next('Action',3.5)">คุณหันไปตามทิศทางของเสียงการต่อสู้ คุณตัดสินใจวิ่งไปทันที</button>
 
-        <button onclick="next('Puzzle',4)">สังเกตสัญลักษณ์แปลก ๆ บนต้นไม้</button>
+        <button onclick="next('Puzzle',4.5)">คุณหยุดนิ่งสายตาของคุณจับจ้องไปที่สัญลักษณ์บนต้นไม้</button>
 
-        <button onclick="next('Story',5)">เดินไปตามทางที่มีบ้านเล็ก ๆ อยู่</button>
+        <button onclick="next('Story',5.5)">คุณหันไปทางบ้านไม้ คุณเริ่มเดินไปอย่างระวัง</button>
+
+    </div>
+
+    <!-- PAGE 2 -->
+    <div id="q2.5" class="page">
+
+        <p>คุณเดินลึกเข้าไปในป่า
+            <br>จนกระทั่งต้นไม้เริ่มบางลง
+            <br>ตรงหน้าคุณคือ “หมู่บ้าน”
+            <br>บ้านไม้หลายหลังตั้งเรียงกัน
+            <br>แต่ไม่มีเสียงพูด ไม่มีเสียงชีวิต
+            <br>ประตูบางบานเปิดค้าง
+            <br>หน้าต่างแตก
+            <br>ของใช้ยังวางอยู่เหมือนเพิ่งถูกทิ้งไป
+            <br>ลมพัดผ่าน…ทำให้ประตูไม้กระทบกันเบา ๆ
+            <br>คุณรู้สึกได้ทันที—
+        </p>
+
+        <button onclick="next('',2)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -56,32 +101,70 @@
 
     <div id="q2" class="page">
 
-        <p>คุณพบหมู่บ้านร้าง</p>
+        <p>นี่ไม่ใช่หมู่บ้านที่ถูกทิ้งร้างตามเวลา
+            <br>แต่มันคือหมู่บ้านที่ “ทุกคนหนีบางอย่างไป”
+            <br>และบางอย่างนั้น…อาจยังอยู่ที่นี่
+        </p>
 
-        <button onclick="next('Exploration',6)">สำรวจบ้านแต่ละหลัง</button>
+        <button onclick="next('Exploration',6.5)">คุณค่อย ๆ ลุกขึ้น ยืนอย่างระวัง
+            และเริ่มสำรวจพื้นที่รอบตัวทีละนิด</button>
 
-        <button onclick="next('Action',7)">มองหาศัตรูหรือมอนสเตอร์ในหมู่บ้าน</button>
+        <button onclick="next('Action',7.5)">คุณหันไปตามทิศทางของเสียงการต่อสู้ คุณตัดสินใจวิ่งไปทันที</button>
 
-        <button onclick="next('Puzzle',8)">ตรวจดูสัญลักษณ์ประหลาดในหมู่บ้าน</button>
+        <button onclick="next('Puzzle',8.5)">คุณหยุดนิ่งสายตาของคุณจับจ้องไปที่สัญลักษณ์บนต้นไม้</button>
 
-        <button onclick="next('Story',9)">อ่านบันทึกที่ทิ้งไว้ในบ้าน</button>
+        <button onclick="next('Story',9.5)">คุณหันไปทางบ้านไม้ คุณเริ่มเดินไปอย่างระวัง</button>
 
     </div>
 
+    <!-- PAGE 3 -->
+    <div id="q3.5" class="page">
+
+        <p>คุณวิ่งตามเสียงไป
+            <br>หัวใจเต้นแรงขึ้นเรื่อย ๆ
+            <br>จนกระทั่งคุณทะลุออกจากป่า
+            <br>ตรงหน้าคุณคือ ลานกว้าง
+            <br>และที่กลางลาน—
+        </p>
+
+        <button onclick="next('',3)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
+
+    </div>
 
     <!-- QUESTION 3 -->
 
     <div id="q3" class="page">
 
-        <p>คุณพบอัศวินกำลังต่อสู้กับมอนสเตอร์</p>
+        <p>อัศวินคนหนึ่งกำลังต่อสู้กับมอนสเตอร์ขนาดใหญ่
+            <br>เสียงคำรามของมันสั่นสะเทือนพื้น
+            <br>ดาบของอัศวินฟาดลงไป แต่แทบไม่ทำอะไรได้
+            <br>เขากำลังเสียเปรียบ
+            <br>เขาอาจ “ตาย” ในอีกไม่กี่วินาที
+            <br>คุณหยุดชะงัก
+            <br>คุณต้องตัดสินใจ
+        </p>
 
-        <button onclick="next('Action',7)">เข้าไปช่วยสู้</button>
+        <button onclick="next('Action',7.5)">เข้าไปช่วยสู้</button>
 
-        <button onclick="next('Puzzle',10)">ดูการต่อสู้เพื่อเรียนรู้จังหวะ</button>
+        <button onclick="next('Puzzle',10.5)">ดูการต่อสู้เพื่อเรียนรู้จังหวะ</button>
 
-        <button onclick="next('Exploration',6)">สำรวจพื้นที่รอบ ๆ ก่อน</button>
+        <button onclick="next('Exploration',6.5)">สำรวจพื้นที่รอบ ๆ ก่อน</button>
 
-        <button onclick="next('Story',9)">คุยกับอัศวินหลังการต่อสู้</button>
+        <button onclick="next('Story',9.5)">คุยกับอัศวินหลังการต่อสู้</button>
+
+    </div>
+
+    <!-- PAGE 4 -->
+    <div id="q4.5" class="page">
+
+        <p>คุณเดินตามร่องรอยของสัญลักษณ์
+            <br>จนกระทั่งต้นไม้เริ่มเปิดออก
+            <br>ตรงหน้าคุณคือ “ประตูหินขนาดใหญ่”
+            <br>มันสูงตระหง่าน
+            <br>ปกคลุมด้วยเถาวัลย์
+        </p>
+
+        <button onclick="next('',4)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -89,31 +172,67 @@
 
     <div id="q4" class="page">
 
-        <p>คุณเจอประตูหินโบราณ</p>
+        <p>และเต็มไปด้วยสัญลักษณ์ที่เรียงกันเป็นวง
+            <br>มันดูเก่า…แต่ยัง “มีชีวิต”
+            <br>เหมือนมันกำลังรอใครบางคน
+            <br>หรือบางอย่าง
+            <br>คุณก้าวเข้าไปใกล้
+        </p>
 
-        <button onclick="next('Puzzle',8)">ลองแก้กลไกเปิดประตู</button>
+        <button onclick="next('Puzzle',8.5)">ลองแก้กลไกเปิดประตู</button>
 
-        <button onclick="next('Exploration',6)">มองหาทางลัดรอบ ๆ</button>
+        <button onclick="next('Exploration',6.5)">มองหาทางลัดรอบ ๆ</button>
 
-        <button onclick="next('Action',7)">พังประตูเข้าไป</button>
+        <button onclick="next('Action',7.5)">พังประตูเข้าไป</button>
 
-        <button onclick="next('Story',9)">อ่านจารึกบนประตู</button>
+        <button onclick="next('Story',9.5)">อ่านจารึกบนประตู</button>
 
     </div>
+
+    <!-- PAGE 5 -->
+    <div id="q5.5" class="page">
+
+        <p>คุณเปิดประตูบ้านไม้
+            <br>แสงสลัว ๆ ภายในทำให้คุณต้องหรี่ตา
+            <br>แล้วคุณก็เห็น—
+        </p>
+
+        <button onclick="next('',5)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
+
+    </div>
+
 
     <!-- QUESTION 5 -->
 
     <div id="q5" class="page">
 
-        <p>คุณเจอหญิงลึกลับในบ้าน</p>
+        <p>หญิงคนหนึ่งนั่งอยู่ข้างใน
+            <br>เธอเงยหน้ามองคุณ
+            <br>และยิ้ม…เหมือนเธอ “รู้จักคุณ”
+            <br>บรรยากาศเงียบงัน
+            <br>แต่ไม่ได้น่ากลัว
+            <br>มัน…แปลก
+        </p>
 
-        <button onclick="next('Story',9)">คุยกับเธอเกี่ยวกับโลกนี้</button>
+        <button onclick="next('Story',9.5)">คุยกับเธอเกี่ยวกับโลกนี้</button>
 
-        <button onclick="next('Exploration',6)">ออกไปสำรวจรอบบ้าน</button>
+        <button onclick="next('Exploration',6.5)">ออกไปสำรวจรอบบ้าน</button>
 
-        <button onclick="next('Story',11)">ถามเธอเกี่ยวกับทางออกจากโลกนี้</button>
+        <button onclick="next('Story',11.5)">ถามเธอเกี่ยวกับทางออกจากโลกนี้</button>
 
-        <button onclick="next('Action',7)">ระวังตัวและเตรียมสู้</button>
+        <button onclick="next('Action',7.5)">ระวังตัวและเตรียมสู้</button>
+
+    </div>
+
+    <!-- PAGE 6 -->
+    <div id="q6.5" class="page">
+
+        <p>คุณเดินลึกเข้าไปในป่า
+            <br>ต้นไม้สูงขึ้น แสงเริ่มน้อยลง
+            <br>ไม่นาน ทางก็แยกออกเป็นหลายเส้น
+        </p>
+
+        <button onclick="next('',6)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -121,15 +240,29 @@
 
     <div id="q6" class="page">
 
-        <p>คุณพบป่าลึกที่เต็มไปด้วยทางแยก</p>
+        <p>ลมพัดแรงขึ้น
+            <br>เสียงใบไม้กระทบกันเหมือนเสียงกระซิบ
+            <br>เหมือนป่ากำลัง “ชี้นำ” คุณ
+        </p>
 
-        <button onclick="next('Exploration',10)">เดินสำรวจต่อ</button>
+        <button onclick="next('Exploration',10.5)">เดินสำรวจต่อ</button>
 
-        <button onclick="next('Exploration',10)">ปีนหน้าผาเพื่อดูวิว</button>
+        <button onclick="next('Exploration',10.5)">ปีนหน้าผาเพื่อดูวิว</button>
 
-        <button onclick="next('Puzzle',8)">แก้แผนที่ลึกลับที่เจอ</button>
+        <button onclick="next('Puzzle',8.5)">แก้แผนที่ลึกลับที่เจอ</button>
 
-        <button onclick="next('Action',7)">ตามรอยมอนสเตอร์</button>
+        <button onclick="next('Action',7.5)">ตามรอยมอนสเตอร์</button>
+
+    </div>
+
+    <!-- PAGE 7 -->
+    <div id="q7.5" class="page">
+
+        <p>เสียงหนัก ๆ ดังขึ้นด้านหลังคุณ
+            <br>คุณหันกลับไป—
+        </p>
+
+        <button onclick="next('',7)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -137,15 +270,32 @@
 
     <div id="q7" class="page">
 
-        <p>คุณเจอมอนสเตอร์ขนาดใหญ่</p>
+        <p>มอนสเตอร์ขนาดมหึมากำลังยืนอยู่ตรงนั้น
+            <br>ดวงตาของมันจับจ้องมาที่คุณ
+            <br>ลมหายใจของมันร้อนและหนัก
+            <br>พื้นดินสั่นทุกครั้งที่มันขยับ
+            <br>นี่ไม่ใช่การเจอโดยบังเอิญ
+            <br>มันเหมือน…มัน “รอคุณอยู่”
+        </p>
 
         <button onclick="showResult('Action')">เข้าโจมตีทันที</button>
 
         <button onclick="showResult('Action')">หลบและหาจังหวะโจมตี</button>
 
-        <button onclick="next('Puzzle',10)">ใช้สิ่งแวดล้อมกำจัดมัน</button>
+        <button onclick="next('Puzzle',10.5)">ใช้สิ่งแวดล้อมกำจัดมัน</button>
 
-        <button onclick="next('Exploration',6)">หนีไปหาทางอื่น</button>
+        <button onclick="next('Exploration',6.5)">หนีไปหาทางอื่น</button>
+
+    </div>
+
+    <!-- PAGE 8 -->
+    <div id="q8.5" class="page">
+
+        <p>คุณเข้าสู่ห้องหินปิดตาย
+            <br>กำแพงเต็มไปด้วยสัญลักษณ์
+        </p>
+
+        <button onclick="next('',8)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -153,15 +303,32 @@
 
     <div id="q8" class="page">
 
-        <p>คุณพบห้องปริศนา</p>
+        <p>พื้นมีวงกลมที่สามารถหมุนได้
+            <br>อากาศเย็นและนิ่ง
+            <br>เหมือนห้องนี้กำลัง “รอการแก้ไข”
+        </p>
 
-        <button onclick="next('Puzzle',10)">หมุนสัญลักษณ์ให้ตรงกัน</button>
+        <button onclick="next('Puzzle',10.5)">หมุนสัญลักษณ์ให้ตรงกัน</button>
 
-        <button onclick="next('Exploration',10)">สำรวจหาคำใบ้ในห้อง</button>
+        <button onclick="next('Exploration',10.5)">สำรวจหาคำใบ้ในห้อง</button>
 
-        <button onclick="next('Action',7)">พยายามเปิดประตูด้วยกำลัง</button>
+        <button onclick="next('Action',7.5)">พยายามเปิดประตูด้วยกำลัง</button>
 
-        <button onclick="next('Story',7)">อ่านข้อความโบราณ</button>
+        <button onclick="next('Story',7.5)">อ่านข้อความโบราณ</button>
+
+    </div>
+
+    <!-- PAGE 9 -->
+    <div id="q9.5" class="page">
+
+        <p>คุณเริ่มปะติดปะต่อทุกอย่าง
+            <br>สัญลักษณ์
+            <br>บันทึก
+            <br>คำพูดของผู้คน
+            <br>ทุกอย่างชี้ไปที่สิ่งเดียวกัน—
+        </p>
+
+        <button onclick="next('',9)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -169,15 +336,31 @@
 
     <div id="q9" class="page">
 
-        <p>คุณได้เรียนรู้ความจริงของโลกนี้</p>
+        <p>โลกนี้ไม่ใช่ความจริง
+            <br>มันคือ “การทดสอบ”
+            <br>และทุกการตัดสินใจของคุณ…กำลังถูกบันทึก
+        </p>
 
-        <button onclick="next('Story',11)">คุยกับ NPC ต่อ</button>
+        <button onclick="next('Story',11.5)">คุยกับ NPC ต่อ</button>
 
-        <button onclick="next('Exploration',10)">ออกไปพิสูจน์เรื่องนี้ด้วยตัวเอง</button>
+        <button onclick="next('Exploration',10.5)">ออกไปพิสูจน์เรื่องนี้ด้วยตัวเอง</button>
 
         <button onclick="showResult('Action')">เตรียมตัวต่อสู้กับศัตรูหลัก</button>
 
-        <button onclick="next('Puzzle',8)">ค้นหาความลับเพิ่มเติม</button>
+        <button onclick="next('Puzzle',8.5)">ค้นหาความลับเพิ่มเติม</button>
+
+    </div>
+
+    <!-- PAGE 10 -->
+    <div id="q10.5" class="page">
+
+        <p>ประตูขนาดมหึมาตั้งอยู่ตรงหน้า
+            <br>มันเปิดออกช้า ๆ
+            <br>เผยให้เห็นความมืดภายใน
+            <br>คุณรู้สึกได้—
+        </p>
+
+        <button onclick="next('',10)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -185,15 +368,26 @@
 
     <div id="q10" class="page">
 
-        <p>คุณพบประตูสู่ดันเจี้ยนสุดท้าย</p>
+        <p>นี่คือ “จุดสิ้นสุด”</p>
 
         <button onclick="showResult('Action')">เข้าไปทันที</button>
 
-        <button onclick="next('Exploration',11)">สำรวจรอบดันเจี้ยนก่อน</button>
+        <button onclick="next('Exploration',11.5)">สำรวจรอบดันเจี้ยนก่อน</button>
 
         <button onclick="showResult('Puzzle')">แก้กลไกเปิดประตู</button>
 
-        <button onclick="next('Story',11)">อ่านประวัติของดันเจี้ยน</button>
+        <button onclick="next('Story',11.5)">อ่านประวัติของดันเจี้ยน</button>
+
+    </div>
+
+    <!-- PAGE 11 -->
+    <div id="q11.5" class="page">
+
+        <p>ภายในห้องลึกสุด
+            <br>มีชายคนหนึ่งยืนอยู่
+        </p>
+
+        <button onclick="next('',11)" style="padding:10px;width:20%;margin-bottom:10px">ต่อไป</button>
 
     </div>
 
@@ -201,7 +395,9 @@
 
     <div id="q11" class="page">
 
-        <p>คุณค้นพบความลับของโลกนี้</p>
+        <p>เขามองคุณ…เหมือนเขารู้ทุกอย่าง
+            <br>“โลกนี้ถูกสร้างขึ้นเพื่อสะท้อนตัวตนของผู้เล่น”
+        </p>
 
         <button onclick="showResult('Story')">คุยกับผู้พิทักษ์โลก</button>
 

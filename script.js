@@ -79,7 +79,7 @@ function startQuiz() {
         return
     }
 
-    showPage("q1")
+    showPage("q0")
 
 }
 
