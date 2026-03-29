@@ -153,46 +153,35 @@ function restart() {
 }
 
 function sendData(resultType) {
+    const formData = new URLSearchParams();
+
+    formData.append("inputMBTI", userMBTI);
+    formData.append("result", resultType);
+    formData.append("q1", answers.q1 || "-");
+    formData.append("q2", answers.q2 || "-");
+    formData.append("q3", answers.q3 || "-");
+    formData.append("q4", answers.q4 || "-");
+    formData.append("q5", answers.q5 || "-");
+    formData.append("q6", answers.q6 || "-");
+    formData.append("q7", answers.q7 || "-");
+    formData.append("q8", answers.q8 || "-");
+    formData.append("q9", answers.q9 || "-");
+    formData.append("q10", answers.q10 || "-");
+    formData.append("q11", answers.q11 || "-");
+    formData.append("exploration", scores.Exploration);
+    formData.append("action", scores.Action);
+    formData.append("puzzle", scores.Puzzle);
+    formData.append("story", scores.Story);
+    formData.append("time", new Date().toLocaleString());
 
     fetch("https://script.google.com/macros/s/AKfycbypL1e-e6uS_5d14MsYkplda5UAflPMtomrCNCgcEIkhu0xhRJKmzvV_6zjrM13Smlh6w/exec", {
-
         method: "POST",
-        mode: "no-cors",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-            inputMBTI: userMBTI,
-            result: resultType,
-
-            q1: answers.q1 || "-",
-            q2: answers.q2 || "-",
-            q3: answers.q3 || "-",
-            q4: answers.q4 || "-",
-            q5: answers.q5 || "-",
-            q6: answers.q6 || "-",
-            q7: answers.q7 || "-",
-            q8: answers.q8 || "-",
-            q9: answers.q9 || "-",
-            q10: answers.q10 || "-",
-            q11: answers.q11 || "-",
-
-            exploration: scores.Exploration,
-            action: scores.Action,
-            puzzle: scores.Puzzle,
-            story: scores.Story,
-
-            time: new Date().toLocaleString()
-
-        })
-
+        body: formData
     })
-        .then(res => res.text())
-        .then(data => console.log("Server response:", data))
-        .catch(err => console.error("Error:", err))
-
+    .then(response => response.text())
+    .then(data => console.log("Server response:", data))
+    .catch(error => console.error("Error:", error));
+}
 }
 
 showPage("home")
