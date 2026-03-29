@@ -182,6 +182,5 @@ function sendData(resultType) {
     .then(data => console.log("Server response:", data))
     .catch(error => console.error("Error:", error));
 }
-}
 
 showPage("home")
