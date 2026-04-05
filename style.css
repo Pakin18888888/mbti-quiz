@@ -26,3 +26,9 @@ button {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.center {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
