@@ -70,6 +70,8 @@ function showPage(id) {
 
     document.getElementById(id).style.display = "block"
 
+    updateProgress(id)
+
 }
 
 function startQuiz() {
@@ -131,7 +133,7 @@ function showResult(type) {
     let resultType = getResult()
 
     document.getElementById("result").innerHTML =
-        "สไตล์เกมของคุณคือ <b>" + resultType + "</b>"
+        "คุณคือผู้เล่นสาย <b>" + resultType + "</b>"
 
     showPage("resultPage")
 
@@ -150,6 +152,25 @@ function restart() {
 
     showPage("home")
 
+}
+
+function updateProgress(pageId) {
+
+    let total = 11   // จำนวนคำถามทั้งหมด
+    let current = 0
+
+    if (pageId.startsWith("q")) {
+
+        let num = parseFloat(pageId.replace("q", ""))
+
+        if (!isNaN(num)) {
+            current = Math.floor(num)
+        }
+    }
+
+    let percent = (current / total) * 100
+
+    document.getElementById("progressBar").style.width = percent + "%"
 }
 
 function sendData(resultType) {
@@ -178,9 +199,9 @@ function sendData(resultType) {
         method: "POST",
         body: formData
     })
-    .then(response => response.text())
-    .then(data => console.log("Server response:", data))
-    .catch(error => console.error("Error:", error));
+        .then(response => response.text())
+        .then(data => console.log("Server response:", data))
+        .catch(error => console.error("Error:", error));
 }
 
 showPage("home")

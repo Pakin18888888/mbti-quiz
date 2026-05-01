@@ -32,3 +32,19 @@ button {
     margin: auto;
     width: 300px;
 }
+
+#progressContainer {
+    width: 100%;
+    background: #ddd;
+    height: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#progressBar {
+    height: 10px;
+    width: 0%;
+    background: #ffe988;
+    transition: width 0.3s;
+}
